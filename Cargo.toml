@@ -1,0 +1,6 @@
+[package]
+name = "Ray Tracing in (longer than) a Weekend"
+version = "0.1.0"
+authors = ["Jeff L'Heureux <chessRPG@hotmail.com>"]
+
+[dependencies]
