@@ -29,12 +29,12 @@ impl Vector3 {
 	}		
 }
 
-/*
+
 impl Add for Vector3 {
 	type Output = Vector3;
 	
 	fn add (self, other: Vector3) -> Vector3 {
-		Vector3 {self.x + other.x, self.y + other.y, self.z + other.z}
+		Vector3 {x: self.x + other.x, y: self.y + other.y, z: self.z + other.z}
 	}
 }
 
@@ -42,7 +42,7 @@ impl Sub for Vector3 {
 	type Output = Vector3;
 	
 	fn sub (self, other: Vector3) -> Vector3 {
-		Vector3 {self.x - other.x, self.y - other.y, self.z - other.z}
+		Vector3 {x: self.x - other.x, y: self.y - other.y, z: self.z - other.z}
 	}
 }
 
@@ -50,7 +50,7 @@ impl Mul<f64> for Vector3 {
 	type Output = Vector3;
 	
 	fn mul (self, factor: f64) -> Vector3 {
-		Vector3 {self.x * factor, self.y * factor, self.z * factor}
+		Vector3 {x: self.x * factor, y: self.y * factor, z: self.z * factor}
 	}
 }
 
@@ -58,7 +58,6 @@ impl Neg for Vector3 {
 	type Output = Vector3;
 	
 	fn neg (self) -> Vector3 {
-		Vector3 {-self.x, -self.y, -self.z}
+		Vector3 {x: -self.x, y: -self.y, z: -self.z}
 	}
 }
-*/
