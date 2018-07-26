@@ -1,10 +1,11 @@
 use std::ops::{Add, Sub, Neg, Mul};
+//use std::fmt;
 
-//#[derive(Copy, Clone)]
+#[derive(Copy, Clone)]
 pub struct Vector3 {
-	pub x : f64,
-	pub y : f64,
-	pub z : f64
+	pub x: f64,
+	pub y: f64,
+	pub z: f64
 }
 
 //pub fn dot(a: vector3, b: vector3) -> f64 {
@@ -61,3 +62,11 @@ impl Neg for Vector3 {
 		Vector3 {x: -self.x, y: -self.y, z: -self.z}
 	}
 }
+
+/*impl fmt::Display for Vector3 {
+	fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
+		let mut str = "";
+		write!(&mut str, format_args!("{}", self.x));
+		Ok(())
+	}
+}*/
