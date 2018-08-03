@@ -1,5 +1,6 @@
 mod vector3;
 use vector3::Vector3;
+use std::fmt;
 
 #[derive(Copy, Clone)]
 pub struct Ray {
@@ -17,8 +18,15 @@ impl Ray {
 	}
 }
 
+impl fmt::Display for Ray {
+	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+		write!(f, "({}), ({})", self.origin, self.direction)
+	}
+}
 
 pub fn main() {
 	let r = Ray::new(Vector3::zero(), Vector3::new(1.0, 0.0, 0.0));
-	println!("{}", r.point_at(5.0).x);
+	let uv = vector3::unit_vector(Vector3::new(1.0, 1.0, 1.0));
+	println!("{}", r);
+	println!("{}", uv.x);
 }

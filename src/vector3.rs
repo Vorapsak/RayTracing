@@ -1,7 +1,7 @@
-use std::ops::{Add, Sub, Neg, Mul};
-//use std::fmt;
+use std::ops::{Add, Sub, Neg, Mul, Div};
+use std::fmt;
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, Debug)]
 pub struct Vector3 {
 	pub x: f64,
 	pub y: f64,
@@ -27,7 +27,7 @@ impl Vector3 {
 	
 	pub fn squared_length(self) -> f64 {
 		return self.x * self.x + self.y * self.y + self.z * self.z
-	}		
+	}
 }
 
 
@@ -63,10 +63,22 @@ impl Neg for Vector3 {
 	}
 }
 
-/*impl fmt::Display for Vector3 {
-	fn fmt(&self, fmt: &mut fmt::Formatter) -> fmt::Result {
-		let mut str = "";
-		write!(&mut str, format_args!("{}", self.x));
-		Ok(())
+impl Div<f64> for Vector3 {
+	type Output = Vector3;
+	
+	fn div(self, a: f64) -> Vector3 {
+		Vector3 {x: self.x / a, y: self.y / a, z: self.z / a}
 	}
-}*/
+}
+
+impl fmt::Display for Vector3 {
+	fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+		write!(f, "{}, {}, {}", self.x, self.y, self.z)
+	}
+}
+
+pub fn unit_vector(a: Vector3) -> Vector3 {
+	let len = a.length();
+	return Vector3::new(a.x / len, a.y / len, a.z / len);
+}
+
