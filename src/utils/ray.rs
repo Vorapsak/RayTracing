@@ -1,5 +1,4 @@
-mod vector3;
-use vector3::Vector3;
+use utils::vector3::*;
 use std::fmt;
 
 #[derive(Copy, Clone)]
@@ -26,7 +25,7 @@ impl fmt::Display for Ray {
 
 pub fn main() {
 	let r = Ray::new(Vector3::zero(), Vector3::new(1.0, 0.0, 0.0));
-	let uv = vector3::unit_vector(Vector3::new(1.0, 1.0, 1.0));
+	let uv = as_unit_vector(Vector3::new(1.0, 1.0, 1.0));
 	println!("{}", r);
 	println!("{}", uv.x);
 }

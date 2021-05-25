@@ -1,5 +1,4 @@
-mod vector3;
-use vector3::Vector3;
+mod utils;
 
 fn main() {
     let nx = 200;

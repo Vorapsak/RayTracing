@@ -8,10 +8,6 @@ pub struct Vector3 {
 	pub z: f64
 }
 
-//pub fn dot(a: vector3, b: vector3) -> f64 {
-//	
-//}
-
 impl Vector3 {
 	pub fn new(x: f64, y: f64, z: f64) -> Vector3 {
 		Vector3 {x: x, y: y, z: z}
@@ -22,11 +18,11 @@ impl Vector3 {
 	}
 	
 	pub fn length(self) -> f64 {
-		return (self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
+		(self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
 	}
 	
 	pub fn squared_length(self) -> f64 {
-		return self.x * self.x + self.y * self.y + self.z * self.z
+		self.x * self.x + self.y * self.y + self.z * self.z
 	}
 }
 
@@ -77,7 +73,7 @@ impl fmt::Display for Vector3 {
 	}
 }
 
-pub fn unit_vector(a: Vector3) -> Vector3 {
+pub fn as_unit_vector(a: Vector3) -> Vector3 {
 	let len = a.length();
 	return Vector3::new(a.x / len, a.y / len, a.z / len);
 }
