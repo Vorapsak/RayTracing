@@ -1,3 +1,4 @@
+mod vector3;
 use std::ops::{Add, Sub, Neg, Mul, Div};
 use std::fmt;
 
@@ -7,10 +8,6 @@ pub struct Vector3 {
 	pub y: f64,
 	pub z: f64
 }
-
-//pub fn dot(a: vector3, b: vector3) -> f64 {
-//	
-//}
 
 impl Vector3 {
 	pub fn new(x: f64, y: f64, z: f64) -> Vector3 {
@@ -22,11 +19,11 @@ impl Vector3 {
 	}
 	
 	pub fn length(self) -> f64 {
-		return (self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
+		(self.x * self.x + self.y * self.y + self.z * self.z).sqrt()
 	}
 	
 	pub fn squared_length(self) -> f64 {
-		return self.x * self.x + self.y * self.y + self.z * self.z
+		self.x * self.x + self.y * self.y + self.z * self.z
 	}
 }
 

@@ -1,4 +1,4 @@
-mod vector3;
+mod ray;
 use vector3::Vector3;
 use std::fmt;
 
