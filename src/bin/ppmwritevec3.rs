@@ -1,5 +1,5 @@
-mod vector3;
-use vector3::Vector3;
+extern crate ray_tracer;
+use ray_tracer::utils::vector3::*;
 
 fn main() {
     let nx = 200;

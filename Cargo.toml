@@ -2,3 +2,5 @@
 name = "ray_tracer"
 version = "0.1.0"
 authors = ["Jeff L'Heureux <chessRPG@hotmail.com>"]
+
+[dependencies]

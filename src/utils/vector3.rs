@@ -1,4 +1,3 @@
-mod vector3;
 use std::ops::{Add, Sub, Neg, Mul, Div};
 use std::fmt;
 
@@ -74,7 +73,7 @@ impl fmt::Display for Vector3 {
 	}
 }
 
-pub fn unit_vector(a: Vector3) -> Vector3 {
+pub fn as_unit_vector(a: Vector3) -> Vector3 {
 	let len = a.length();
 	return Vector3::new(a.x / len, a.y / len, a.z / len);
 }
